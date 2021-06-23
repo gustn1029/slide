@@ -389,8 +389,8 @@ pauseBtn.addEventListener('click', function(){
 마지막으로 `paly, pause` 버튼 이벤트입니다.  
 먼저 값을 변경할 수 있는 `let`으로 `play`변수를 하나 만들어줍니다.  
 그리고 `play, pause`버튼에 각각 `click event`를 만들어서  
-`play` 버튼을 클릭하면 `play`에 `setInterval`값을 할당해준 뒤,  
+`play` 버튼을 클릭하면 `play`에 `setInterval`값을 할당한 뒤,  
 `play` 버튼을 숨기고 `pause`버튼을 보여줍니다.  
 
-그리고 `pause`버튼을 클릭하면 `clearInterval(play)`를 실행해줍니다.  
-그리고 `pause` 버튼을 숨기고 `play`버튼을 보여줍니다.
+그리고 `pause`버튼을 클릭하면 `clearInterval(play)`를 실행한 뒤,  
+`pause` 버튼을 숨기고 `play`버튼을 보여줍니다.
