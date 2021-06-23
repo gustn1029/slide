@@ -5,66 +5,66 @@ const slideConts = document.querySelectorAll('.slide_conts');
 const contsFirst = document.querySelector('.slide_conts:first-child');
 const contsLast = document.querySelector('.slide_conts:last-child');
 const slideLen = slideConts.length;
-let slideWidth = 100;
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 const playBtn = document.querySelector('.play');
 const pauseBtn = document.querySelector('.pause');
 const active = "slide_active";
+let slideWidth = 100;
 let startNum = 0;
-let curIndex;
-let curSlide;
+let carIndex;
+let carSlide;
 let contsWidth = (slideWidth / (slideLen + 2));
 
 const firstNode = contsFirst.cloneNode(true);
 const lastNode = contsLast.cloneNode(true);
-firstNode.style.width = (slideWidth / (slideLen + 2)) + "%";
-lastNode.style.width = (slideWidth / (slideLen + 2)) + "%";
+firstNode.style.width = contsWidth + "%";
+lastNode.style.width = contsWidth + "%";
 
 slideList.appendChild(firstNode);
 slideList.insertBefore(lastNode, slideList.firstElementChild);
 
 slideWrap.style.overflow = "hidden";
 slideList.style.width = (slideWidth * (slideLen + 2)) + "%";
-for(let i = 0; i < slideLen; i++) {slideConts[i].style.width = (slideWidth / (slideLen + 2)) + "%";}
-slideList.style.transform = `translate3d(-${contsWidth * (startNum + 1)}% , 0, 0)`;
+for(let i = 0; i < slideLen; i++) {slideConts[i].style.width = contsWidth + "%";}
+slideList.style.transform = `translate(-${contsWidth * (startNum + 1)}% , 0)`;
 
-curIndex = startNum;
-curSlide = slideConts[curIndex];
-curSlide.classList.add(active);
+carIndex = startNum;
+carSlide = slideConts[carIndex];
+carSlide.classList.add(active);
 
 function nextEvent(){
-    if(curIndex <= slideLen - 1) {
+    if(carIndex <= slideLen - 1) {
         slideList.style.transition = `all 0.3s`;
-        slideList.style.transform = `translate3d(-${contsWidth * (curIndex + 2)}%, 0, 0)`;
+        slideList.style.transform = `translate(-${contsWidth * (carIndex + 2)}%, 0)`;
     }
-    if(curIndex === slideLen - 1) {
+    if(carIndex === slideLen - 1) {
         setTimeout(function(){
             slideList.style.transition = `0s`;
-            slideList.style.transform = `translate3d(-${contsWidth}%, 0, 0)`;
+            slideList.style.transform = `translate(-${contsWidth}%, 0)`;
         }, 300);
-        curIndex = -1;
+        carIndex = -1;
     }
-    curSlide.classList.remove(active);
-    curSlide = slideConts[++curIndex];
-    curSlide.classList.add(active);
+    carSlide.classList.remove(active);
+    carSlide = slideConts[++carIndex];
+    carSlide.classList.add(active);
 }
 
 function prevEvent() {
-    if(curIndex >= 0) {
+    if(carIndex >= 0) {
         slideList.style.transition = `all 0.3s`;
-        slideList.style.transform = `translate3d(-${contsWidth * curIndex}%, 0, 0)`;
+        slideList.style.transform = `translate(-${contsWidth * carIndex}%, 0)`;
     }
-    if(curIndex === 0) {
+    if(carIndex === 0) {
         setTimeout(function(){
             slideList.style.transition = `0s`;
-            slideList.style.transform = `translate3d(-${contsWidth * slideLen}%, 0, 0)`;
+            slideList.style.transform = `translate(-${contsWidth * slideLen}%, 0)`;
         }, 300);
-        curIndex = slideLen;
+        carIndex = slideLen;
     }
-    curSlide.classList.remove(active);
-    curSlide = slideConts[--curIndex];
-    curSlide.classList.add(active);
+    carSlide.classList.remove(active);
+    carSlide = slideConts[--carIndex];
+    carSlide.classList.add(active);
 }
 
 // next button

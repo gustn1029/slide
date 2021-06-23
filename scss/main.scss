@@ -83,15 +83,11 @@ section{padding: 5% 0;}
             transform: translateY(-50%);
   }
 //   .visual {overflow: hidden;}
+.visual_wrap {margin: 0 auto 60px;}
   .slide_list {position: relative;}
   .slide_conts {float: left; position: relative;
     img {width: 100%;}
     p{position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: #fff; font-size: 5em; font-weight: 500;}
-}
-.visual_wrap {margin: 0 auto 60px;
-    figure {display: inline-block; 
-        img{width: 100%;}
-    }
 }
 
   .btn_wrap {
