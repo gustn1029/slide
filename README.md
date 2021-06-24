@@ -1,4 +1,6 @@
 # carousel slider vanilla JS
+
+## HTML
 ```html
 <div class="visual_wrap">
     <div class="visual slide_wrap">
@@ -67,6 +69,7 @@
 `button` 은 prev, play, pause, next 이렇게 4개의 버튼을 만들었고,  
 play, pause 는 실행되는 이벤트에 맞춰서 서로 바뀌도록 만들었습니다.
 
+## SCSS
 ```css
 .visual_wrap {margin: 0 auto 60px;}
 .slide_list {position: relative;}
@@ -90,6 +93,8 @@ play, pause 는 실행되는 이벤트에 맞춰서 서로 바뀌도록 만들�
 ```
 css 는 간단하게 문구와 버튼의 위치만 잡아주었습니다. 
 그리고 `.slide_conts` 는 `float:left` 로 왼쪽으로 위치시켰습니다.
+
+## JAVASCRIPT
 ```js
 // const wrap = document.querySelector('.visual_wrap');
 const slideWrap = document.querySelector('.slide_wrap');
