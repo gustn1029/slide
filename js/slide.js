@@ -14,8 +14,7 @@ let slideWidth = 100;
 let startNum = 0;
 let carIndex;
 let carSlide;
-let contsWidth = (Math.round((slideWidth / (slideLen + 2)) * 100) / 100);
-console.log(contsWidth);
+let contsWidth = (slideWidth / (slideLen + 2));
 
 const firstNode = contsFirst.cloneNode(true);
 const lastNode = contsLast.cloneNode(true);

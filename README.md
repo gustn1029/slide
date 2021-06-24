@@ -91,7 +91,7 @@ play, pause 는 실행되는 이벤트에 맞춰서 서로 바뀌도록 만들�
     }
 }
 ```
-css 는 간단하게 문구와 버튼의 위치만 잡아주었습니다.  
+css 는 간단하게 문구와 버튼의 위치만 잡아주었습니다. 
 그리고 `.slide_conts` 는 `float:left` 로 왼쪽으로 위치시켰습니다.
 
 ## JAVASCRIPT
@@ -211,7 +211,7 @@ let slideWidth = 100;
 let startNum = 0;
 let carIndex;
 let carSlide;
-let contsWidth = (Math.round((slideWidth / (slideLen + 2)) * 100) / 100);
+let contsWidth = (slideWidth / (slideLen + 2);
 
 const firstNode = contsFirst.cloneNode(true);
 const lastNode = contsLast.cloneNode(true);
@@ -242,10 +242,8 @@ slideList.style.transform = `translate(-${contsWidth * (startNum + 1)}% , 0)`;
 - 이유는 cloneNode 로 `slide_conts`가 하나 추가 되어 있기 때문입니다.
 
 
-`slide_cont`의 `width`는 `let contsWidth = (Math.round((slideWidth / (slideLen + 2)) * 100) / 100)`% 로  
+`slide_cont`의 `width`는 `let contsWidth = (slideWidth / (slideLen + 2)`% 로  
 변수 `contsWidth`에 할당하여 사용하였습니다.
-- `Math.round`를 사용해서 소수점 2자리에서 반올림 한 이유는  
-IE 에서 width 소수점이 2자리까지 밖에 설정이 안되는 것을 확인해서
 
 ```js
 carIndex = startNum;
