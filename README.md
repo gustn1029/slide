@@ -236,7 +236,7 @@ slideList.style.transform = `translate(-${contsWidth * (startNum + 1)}% , 0)`;
 첫번째 `slide_conts` 와 마지막 `slide_conts` 를 추가해줬습니다.
 
 `slideList`의 `width`는 `(slideWidth * (slideLen + 2))%`값으로 설정해줍니다.
-- `+` 2 를 해주는 이유는 아까 cloneNode 로 추가한 2개의 값을 더해준 것 입니다.
+- +2 를 해주는 이유는 아까 cloneNode 로 추가한 2개의 값을 더해준 것 입니다.
 
 그리고 `slideList`는 초기값으로 `translate(-${contsWidth * (startNum + 1)}% , 0)` 값을 설정해줍니다.
 - 이유는 cloneNode 로 `slide_conts`가 하나 추가 되어 있기 때문입니다.
