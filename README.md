@@ -1,4 +1,4 @@
-# slide vanilla JS
+# carousel slider vanilla JS
 ```html
 <div class="visual_wrap">
     <div class="visual slide_wrap">
