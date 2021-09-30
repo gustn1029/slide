@@ -24,7 +24,7 @@
     position: absolute; left: 50%; top: 67%;
     transform: translate(-50%, 110%);
       ul {display: flex;
-        li{width: 6px; height: 6px;
+        li{width: 6px; height: 6px; cursor: pointer;
           border-radius: 100%; border: 1px solid #fff;
           color: #fff; text-indent: -9999px;
           &.on {background-color: #fff;}
