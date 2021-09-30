@@ -131,3 +131,15 @@ pauseBtn.addEventListener('click', function(){
     pauseBtn.style.display = "none";
     playBtn.style.display = "block"
 })
+
+function moveSlide() {
+    let checkSlide = carSlide[carIndex];
+    for(let i = 0; i < slideLen; i++) {
+        if(checkSlide) {
+            checkSlide.classList.remove(active);
+        }
+        carSlide[i].classList.add(active);
+        checkSlide = carSlide[i];
+    }
+}
+
