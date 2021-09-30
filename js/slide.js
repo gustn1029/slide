@@ -33,6 +33,31 @@ carIndex = startNum;
 carSlide = slideConts[carIndex];
 carSlide.classList.add(active);
 
+// make slide dot
+function makeDot() {
+    const dotWrap = document.querySelector('.dot_wrap');
+    let dot = [];
+
+    dot.push('<ul>');
+    for (let i = 0; i < slideConts.length; i++) {
+        dot.push(`
+            <li class="dots">${i}</li>
+        `);
+    }
+    dot.push('</ul>');
+    return dotWrap.innerHTML = dot.join('');
+}
+
+makeDot();
+
+const dots = document.querySelectorAll('.dots');
+let selectDot;
+let dotIndex = 0;
+selectDot = dots[dotIndex];
+selectDot.classList.add('on');
+
+
+
 function nextEvent(){
     if(carIndex <= slideLen - 1) {
         slideList.style.transition = `all 0.3s`;
@@ -48,6 +73,14 @@ function nextEvent(){
     carSlide.classList.remove(active);
     carSlide = slideConts[++carIndex];
     carSlide.classList.add(active);
+
+    if(dotIndex >= slideLen - 1) {
+        dotIndex = -1;
+    }
+    selectDot.classList.remove('on');
+    selectDot = dots[++dotIndex];
+    selectDot.classList.add('on');
+    console.log(selectDot);
 }
 
 function prevEvent() {
@@ -65,6 +98,13 @@ function prevEvent() {
     carSlide.classList.remove(active);
     carSlide = slideConts[--carIndex];
     carSlide.classList.add(active);
+
+    if(dotIndex <= 0) {
+        dotIndex = slideLen;
+    }
+    selectDot.classList.remove('on');
+    selectDot = dots[--dotIndex];
+    selectDot.classList.add('on');
 }
 
 // next button
